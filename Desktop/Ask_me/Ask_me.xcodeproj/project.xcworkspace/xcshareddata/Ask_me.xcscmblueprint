@@ -1,0 +1,29 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1C42025553B81D9F9B97189140981B00FB84AD90" : 0,
+    "FCEC82EE6406EB9D73CA730ECFC54ECD70DCC3EC" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "66B4C1D0-3729-452B-BC8A-C8DA9602AECF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1C42025553B81D9F9B97189140981B00FB84AD90" : "Ask%20me\/",
+    "FCEC82EE6406EB9D73CA730ECFC54ECD70DCC3EC" : "Swift-BanTang-new\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Ask_me",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Ask_me.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yvonneye\/Ask_me.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1C42025553B81D9F9B97189140981B00FB84AD90"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jiachenmu\/Swift-BanTang.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FCEC82EE6406EB9D73CA730ECFC54ECD70DCC3EC"
+    }
+  ]
+}
