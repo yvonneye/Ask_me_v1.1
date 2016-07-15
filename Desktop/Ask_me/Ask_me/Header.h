@@ -1,15 +1,14 @@
 //
-//  Ask_me-Bridging-Header.h
+//  Header.h
 //  Ask_me
 //
 //  Created by Apple on 16/7/15.
 //  Copyright © 2016年 NJU. All rights reserved.
 //
 
-#ifndef Ask_me_Bridging_Header_h
-#define Ask_me_Bridging_Header_h
+#ifndef Header_h
+#define Header_h
 
-#import <Foundation/Foundation.h>
 #import "SVProgressHUD.h"
 #import "SDWebImageCompat.h"
 #import "SDWebImageDecoder.h"
@@ -27,4 +26,4 @@
 #import "SDImageCache.h"
 #import "NSData+ImageContentType.h"
 
-#endif /* Ask_me_Bridging_Header_h */
+#endif /* Header_h */

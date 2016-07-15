@@ -50,7 +50,7 @@ class FirstViewController: UIViewController{
         self.createBannerView()
         print("create bannerview succeed")
 //        self.dismissViewControllerAnimated(true, completion: nil)
-        self.buildSearchBar()
+//        self.buildSearchBar()
         
     }
     
@@ -95,19 +95,19 @@ class FirstViewController: UIViewController{
         
     }
     
-    func buildSearchBar() {
-        searchBar = CMSearchBar.init(frame: CGRectMake(36, 330/2, 265, 29),Font:UIFont.systemFontOfSize(12.0),TextColor: MainTitleColor,PlaceHolder: "search for food",HotWords: nil)
-        weak var weakSelf = self
-        searchBar.changetextfieldClourse = { (text:String)->() in
-            if text.characters.count == 0 {
-                print("searchBar clear")
-                weakSelf!.cancelBtn.setTitle("cancle", forState: .Normal)
-            } else if text.characters.count > 0 {
-                weakSelf!.cancelBtn.setTitle("search", forState: .Normal)
-            }
-        }
-        customBar.addSubview(searchBar)
-    }
+//    func buildSearchBar() {
+//        searchBar = CMSearchBar.init(frame: CGRectMake(36, 330/2, 265, 29),Font:UIFont.systemFontOfSize(12.0),TextColor: MainTitleColor,PlaceHolder: "search for food",HotWords: nil)
+//        weak var weakSelf = self
+//        searchBar.changetextfieldClourse = { (text:String)->() in
+//            if text.characters.count == 0 {
+//                print("searchBar clear")
+//                weakSelf!.cancelBtn.setTitle("cancle", forState: .Normal)
+//            } else if text.characters.count > 0 {
+//                weakSelf!.cancelBtn.setTitle("search", forState: .Normal)
+//            }
+//        }
+//        customBar.addSubview(searchBar)
+//    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

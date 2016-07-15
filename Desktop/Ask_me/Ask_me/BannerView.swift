@@ -48,20 +48,21 @@ class  BannerView: UIView,UIScrollViewDelegate {
         //index = 0前面加最后一张图片，index = count-1后加第一张图片,最后一张放到index=0的位置
         let lastImageView = UIImageView.init(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
         let bannerModel = self.bannerArray[bannerArray.count-1] as! DailyBannerModel
-        print(bannerModel.imageUrl)
-//        lastImageView.sd_setImageWithURL(NSURL(string: bannerModel.imageUrl),placeholderImage:UIImage(named:"placeHolder.jpg"))
-        lastImageView.sd_setImageWithURL(NSURL(string: bannerModel.imageUrl))
+//        lastImageView.sd_setImageWithURL(NSURL(string: bannerModel.imageUrl),placeholderImage: UIImage(named: "placeholder.jpg"))
+        lastImageView.image = UIImage(named: "placeholder.jpg")
         showScrollerView.addSubview(lastImageView)
         //第一张放index=count的位置
         let firstImageView = UIImageView.init(frame: CGRectMake(CGFloat(bannerArray.count+1)*SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
         let model = self.bannerArray[0] as! DailyBannerModel
-        firstImageView.sd_setImageWithURL(NSURL(string: model.imageUrl),placeholderImage: UIImage(named: "placeHolder.jpg"))
+//        firstImageView.sd_setImageWithURL(NSURL(string: model.imageUrl), placeholderImage: UIImage(named: "placeholder.jpg"))
+        firstImageView.image = UIImage(named: "placeholder.jpg")
         showScrollerView.addSubview(firstImageView)
         
         for (var index = 0; index < self.bannerArray.count;index++) {
             let bannerModel = self.bannerArray[index] as! DailyBannerModel
             let imageView  = UIImageView(frame: CGRectMake(SCREEN_WIDTH*CGFloat(index+1), 0, SCREEN_WIDTH, SCREEN_HEIGHT))
-            imageView.sd_setImageWithURL(NSURL(string: bannerModel.imageUrl), placeholderImage: UIImage(named: "placeHolder.jpg"))
+//            imageView.sd_setImageWithURL(NSURL(string: bannerModel.imageUrl), placeholderImage: UIImage(named: "placeholder.jpg"))
+            imageView.image = UIImage(named: "placeholder.jpg")
             showScrollerView.addSubview(imageView)
         }
         showScrollerView.contentSize  = CGSizeMake(SCREEN_WIDTH*CGFloat(bannerArray.count+2), 0)
