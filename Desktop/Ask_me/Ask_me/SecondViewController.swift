@@ -9,12 +9,7 @@
 import Foundation
 import UIKit
 
-//
-//class SecondViewController: UIViewController,UITableViewDelegate{
-//
-//}
-
-class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
+class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate{
     
     var tableView:UITableView?
     var Infos = [Food]()
@@ -28,12 +23,23 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         self.tableView = UITableView(frame:self.view.frame,style:.Plain)
         
-        let food1:Food = Food(name:"抹茶冰淇淋",rate:"五星",url:"http://img3.duitang.com/uploads/item/201607/08/20160708152643_2MKeH.thumb.700_0.jpeg")
+        let food1:Food = Food(name:"抹茶冰淇淋",rate:"五星",url:"http://img3.duitang.com/uploads/item/201508/01/20150801061048_WtXmc.jpeg")
         
         Infos.append(food1)
         
         self.tableView!.delegate = self
         self.tableView!.dataSource = self
+        name.delegate = self
+        rate.delegate = self
+        url.delegate = self
+        name.keyboardType=UIKeyboardType.Default
+        name.returnKeyType=UIReturnKeyType.Done
+        
+        rate.keyboardType=UIKeyboardType.Default
+        rate.returnKeyType=UIReturnKeyType.Done
+        
+        url.keyboardType=UIKeyboardType.Default
+        url.returnKeyType=UIReturnKeyType.Done
         
         let item = UIBarButtonItem(title:"Add",style:.Plain,target:self,action:#selector(SecondViewController.add))
         
@@ -62,6 +68,7 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
         rate.borderStyle = UITextBorderStyle.RoundedRect
         rate.backgroundColor = UIColor.whiteColor()
         rate.placeholder="请输入评价星级（1~5）"
+        
         childviewOfDest.addSubview(rate)
 
         url.borderStyle = UITextBorderStyle.RoundedRect
@@ -69,7 +76,7 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
         url.placeholder="请输入图片的URL"
         childviewOfDest.addSubview(url)
         
-        let item = UIBarButtonItem(title:"Done",style:.Plain,target:dest,action:#selector(SecondViewController.done))
+        let item = UIBarButtonItem(title:"Done",style:.Plain,target:self,action:#selector(SecondViewController.done))
         
         dest.navigationItem.setRightBarButtonItem(item, animated: true)
         
@@ -82,6 +89,7 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
     func done(){
         let food = Food(name: (name.text)!,rate: (name.text)!,url: (url.text)!)
         Infos.append(food)
+        navigationController?.popViewControllerAnimated(true)
         self.tableView?.reloadData()
     }
     
@@ -139,7 +147,21 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        // Hide the keyboard.
+        textField.resignFirstResponder()
+        return true
+    }
     
+    func textFieldDidEndEditing(textField: UITextField) {
+        
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        // Disable the Save button while editing.
+       
+    }
+
     
 }
 
