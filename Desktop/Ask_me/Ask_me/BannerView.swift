@@ -20,6 +20,8 @@ class  BannerView: UIView,UIScrollViewDelegate {
     var showScrollerView = UIScrollView()
     var bannerArray = NSMutableArray()
     
+    let address :[String] = ["http://a1.qpic.cn/psb?/V13YH7W402XUsU/KZhjCLn9YkGGCpyBlXHb*rUAfMyII7X.FFaAJbyxIxk!/b/dAsBAAAAAAAA&bo=LAIgAwAAAAAFByk!&rf=viewer_4","http://a1.qpic.cn/psb?/V13YH7W402XUsU/xVyy0gn3G3a9OCS4lFcCL59gXVWq8RZ51ZZH9yXAzjo!/b/dOEAAAAAAAAA&bo=LAIgAwAAAAAFAC4!&rf=viewer_4","http://a3.qpic.cn/psb?/V13YH7W402XUsU/cAilQ23AcaU31dLsDB7XT4l0TSBWXiTw23Lv8YFWv7Y!/b/dHABAAAAAAAA&bo=LAIgAwAAAAAFAC4!&rf=viewer_4","http://img3.duitang.com/uploads/item/201604/03/20160403102627_wM8NF.thumb.700_0.jpeg","http://img3.duitang.com/uploads/item/201408/04/20140804170804_BaUdm.thumb.700_0.jpeg"]
+    
     var timer = NSTimer()
     var pageControl = UIPageControl()
     
@@ -62,7 +64,7 @@ class  BannerView: UIView,UIScrollViewDelegate {
             let bannerModel = self.bannerArray[index] as! DailyBannerModel
             let imageView  = UIImageView(frame: CGRectMake(SCREEN_WIDTH*CGFloat(index+1), 0, SCREEN_WIDTH, SCREEN_HEIGHT))
 //            imageView.sd_setImageWithURL(NSURL(string: bannerModel.imageUrl), placeholderImage: UIImage(named: "placeholder.jpg"))
-            imageView.image = UIImage(named: "placeholder.jpg")
+            imageView.image = UIImage(named: "placeholder"+String(index)+".jpg")
             showScrollerView.addSubview(imageView)
         }
         showScrollerView.contentSize  = CGSizeMake(SCREEN_WIDTH*CGFloat(bannerArray.count+2), 0)
